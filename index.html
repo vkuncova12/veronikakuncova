@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veronika Kuncová — Kraniosakrální terapie</title>
+<meta name="description" content="Kraniosakrální terapie v Praze. Jemná relaxační metoda pro tělo i mysl.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFAF8; --mark:#2A312D; --cream:#F2F0E8; --charcoal:#262B29;
+    --sage:#E0E4DA; --sage-deep:#5C6B5B; --ink-soft:#3D453F; --hair:#C3C9BB;
+    --label:#4A5449; --body-txt:#2F352F; --nav-bg:#E2E8DC; --nav-hair:#BFC7B5;
+    --nav-idle:#54614F; --footer-label:#C6CFC1; --footer-copy:#DDE2D7;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--mark);font-family:Raleway,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--sage-deep);text-decoration:none;}
+  a:hover{color:var(--mark);}
+  ::selection{background:var(--sage);}
+  img{max-width:100%;}
+
+  .wrap{max-width:1180px;margin:0 auto;padding-left:clamp(20px,5vw,56px);padding-right:clamp(20px,5vw,56px);}
+
+  header{position:sticky;top:0;z-index:20;background:rgba(226,232,220,0.94);backdrop-filter:blur(10px);box-shadow:0 1px 12px rgba(38,43,41,0.05);}
+  .header-inner{position:relative;max-width:1180px;margin:0 auto;padding:clamp(26px,3.4vw,40px) clamp(20px,5vw,56px);display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .brand{display:flex;flex-direction:column;align-items:center;gap:3px;padding:0 clamp(6px,2vw,18px);color:var(--charcoal);}
+  .brand .mark{display:block;font-weight:200;font-size:clamp(22px,3.8vw,32px);letter-spacing:0.28em;text-indent:0.28em;line-height:1;}
+  .brand .descriptor{display:block;margin-top:0.55em;font-weight:400;font-size:clamp(8px,1.38vw,11.6px);line-height:1;white-space:nowrap;}
+  .head-right{display:flex;align-items:center;gap:clamp(14px,3vw,28px);}
+
+  nav.primary{display:flex;align-items:center;gap:clamp(18px,4vw,40px);}
+  nav.primary a{font-size:13px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mark);padding:8px 0;}
+  nav.primary a:hover{color:var(--sage-deep);}
+
+  .lang-switch{display:flex;align-items:stretch;}
+  .lang-switch button{background:none;border:none;padding:10px 14px;min-height:44px;cursor:pointer;font-family:inherit;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:300;color:var(--nav-idle);}
+  .lang-switch button.active{font-weight:500;color:var(--charcoal);}
+  .lang-switch .divider{width:1px;background:var(--hair);margin:3px 0;}
+
+  .burger{display:none;flex-direction:column;justify-content:center;gap:6px;width:44px;height:44px;align-items:center;padding:0;background:none;border:none;cursor:pointer;}
+  .burger span{display:block;width:22px;height:1px;background:var(--mark);transition:transform 220ms ease;}
+  .burger.open span:first-child{transform:translateY(3.5px) rotate(9deg);}
+  .burger.open span:last-child{transform:translateY(-3.5px) rotate(-9deg);}
+
+  @media (max-width:820px){
+    .brand .descriptor{display:none;}
+    nav.primary{
+      position:absolute;top:100%;left:0;right:0;background:var(--nav-bg);border-top:1px solid var(--nav-hair);
+      padding:0 clamp(20px,5vw,56px);display:flex;flex-direction:column;gap:4px;
+      max-height:0;opacity:0;overflow:hidden;pointer-events:none;
+      transition:max-height 260ms ease, opacity 200ms ease, padding 260ms ease;
+    }
+    nav.primary.open{max-height:260px;opacity:1;pointer-events:auto;padding:10px clamp(20px,5vw,56px) 22px;}
+    .burger{display:flex;}
+  }
+
+  section#top{padding:clamp(64px,11vh,140px) clamp(20px,5vw,56px) clamp(56px,9vh,116px);}
+  .hero-inner{max-width:900px;margin:0 auto;text-align:center;}
+  h1{margin:0;font-weight:200;font-size:clamp(34px,6.6vw,74px);line-height:1.1;letter-spacing:0.05em;text-transform:uppercase;color:var(--mark);text-wrap:balance;}
+  .hero-inner h2{margin:clamp(18px,3vw,28px) 0 0;font-weight:300;font-size:clamp(17px,2.7vw,27px);line-height:1.4;color:var(--ink-soft);text-wrap:balance;}
+  .rule{width:56px;height:1px;background:var(--hair);margin:clamp(32px,5vw,52px) auto;}
+  .hero-inner p{margin:0 auto;max-width:680px;text-align:left;font-weight:300;font-size:clamp(15px,1.75vw,18px);line-height:1.85;color:var(--charcoal);text-wrap:pretty;}
+  .cta-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:clamp(34px,5vw,54px);}
+  .btn{padding:15px 34px;font-size:12px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;border-radius:2px;transition:background 200ms,border-color 200ms;}
+  .btn-solid{background:var(--sage-deep);color:var(--cream);}
+  .btn-solid:hover{background:var(--mark);color:var(--cream);}
+  .btn-outline{border:1px solid var(--sage-deep);color:var(--mark);}
+  .btn-outline:hover{border-color:var(--sage-deep);color:var(--mark);}
+
+  section#therapy{background:var(--sage-deep);padding:clamp(64px,10vh,128px) clamp(20px,5vw,56px);}
+  section#therapy h2{margin:0 0 clamp(40px,6vw,68px);font-weight:200;font-size:clamp(24px,3.7vw,41px);line-height:1.24;letter-spacing:0.06em;text-transform:uppercase;color:var(--cream);max-width:760px;text-wrap:balance;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:clamp(16px,2.2vw,28px);}
+  .card{background:var(--paper);padding:clamp(28px,3.4vw,42px);border-radius:2px;display:flex;flex-direction:column;gap:16px;}
+  .card .num{font-weight:300;font-size:12px;letter-spacing:0.22em;color:var(--sage-deep);}
+  .card h3{margin:0;font-weight:300;font-size:clamp(18px,2.1vw,22px);line-height:1.3;color:var(--mark);text-wrap:balance;}
+  .card p{margin:0;font-weight:300;font-size:15px;line-height:1.75;color:var(--body-txt);text-wrap:pretty;}
+
+  section#about{padding:clamp(64px,11vh,140px) clamp(20px,5vw,56px);}
+  .about-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(38px,6vw,80px);align-items:start;}
+  .about-media{display:flex;flex-direction:column;gap:22px;}
+  .about-media img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 22%;background:var(--cream);}
+  .about-media blockquote{margin:0;font-weight:300;font-size:clamp(19px,2.4vw,25px);line-height:1.45;color:var(--mark);text-wrap:balance;}
+  .about-copy{display:flex;flex-direction:column;gap:clamp(18px,2.4vw,26px);}
+  .eyebrow{margin:0;font-size:11px;font-weight:400;letter-spacing:0.34em;text-transform:uppercase;color:var(--label);}
+  .about-copy h2{margin:0;font-weight:200;font-size:clamp(28px,4.4vw,48px);line-height:1.12;letter-spacing:0.08em;text-transform:uppercase;color:var(--mark);}
+  .about-copy .role{margin:0;font-weight:400;font-size:clamp(16px,1.9vw,19px);color:var(--label);}
+  .about-copy p.body{margin:0;font-weight:300;font-size:clamp(15px,1.75vw,18px);line-height:1.85;color:var(--mark);text-wrap:pretty;}
+  .about-copy p.body.secondary{font-size:16px;color:var(--body-txt);}
+
+  section#contact{background:var(--sage);padding:clamp(64px,10vh,128px) clamp(20px,5vw,56px);}
+  .contact-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(38px,6vw,80px);align-items:start;}
+  .contact-info{display:flex;flex-direction:column;gap:20px;}
+  .contact-info h2{margin:0;font-weight:200;font-size:clamp(26px,3.9vw,42px);line-height:1.18;letter-spacing:0.06em;text-transform:uppercase;color:var(--charcoal);text-wrap:balance;}
+  .contact-info p.intro{margin:0;max-width:420px;font-weight:300;font-size:clamp(15px,1.75vw,18px);line-height:1.8;color:var(--mark);text-wrap:pretty;}
+  .contact-links{display:flex;flex-direction:column;gap:8px;margin-top:8px;}
+  .contact-links a{font-weight:300;color:var(--charcoal);}
+  .contact-links a:first-child{font-size:clamp(17px,2.1vw,21px);}
+  .contact-links a:last-child{font-size:16px;}
+  .contact-links a:hover{color:var(--sage-deep);}
+
+  form{background:var(--paper);padding:clamp(26px,3.4vw,44px);display:flex;flex-direction:column;gap:20px;}
+  form label{display:flex;flex-direction:column;gap:8px;}
+  form label span{font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--label);}
+  form input,form textarea{font:inherit;font-weight:300;font-size:16px;color:var(--charcoal);padding:13px 14px;background:var(--cream);border:none;border-radius:2px;outline:none;min-height:44px;width:100%;box-sizing:border-box;}
+  form textarea{line-height:1.65;resize:vertical;min-height:auto;}
+  form button{margin-top:4px;padding:16px 34px;min-height:44px;cursor:pointer;background:var(--sage-deep);color:var(--cream);border:none;border-radius:2px;font:inherit;font-size:12px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;}
+  form button:hover{background:var(--mark);}
+  .sent-msg{margin:0;font-weight:300;font-size:15px;line-height:1.6;color:var(--sage-deep);display:none;}
+  .sent-msg.show{display:block;}
+
+  footer{background:var(--charcoal);color:var(--cream);padding:clamp(60px,10vh,118px) clamp(20px,5vw,56px) 32px;}
+  .footer-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(38px,6vw,72px);align-items:start;}
+  .footer-mark{display:flex;flex-direction:column;align-items:center;width:fit-content;color:var(--cream);}
+  .footer-mark .mark{display:block;font-weight:200;font-size:clamp(23px,3.4vw,30px);letter-spacing:0.28em;text-indent:0.28em;line-height:1;}
+  .footer-mark .descriptor{display:block;margin-top:0.55em;font-weight:400;font-size:clamp(8.3px,1.2vw,10.9px);line-height:1;white-space:nowrap;}
+  .footer-col{display:flex;flex-direction:column;gap:14px;}
+  .footer-col p.label{margin:0 0 6px;font-size:11px;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:var(--footer-label);}
+  .footer-col a{font-weight:300;color:var(--cream);}
+  .footer-col a:hover{color:var(--sage);}
+  .footer-col p.addr{margin:0;font-weight:300;font-size:clamp(15px,1.8vw,18px);line-height:1.7;color:var(--cream);}
+  .footer-bottom{margin-top:clamp(48px,7vw,88px);padding-top:22px;border-top:1px solid rgba(242,240,232,0.22);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .footer-bottom span{font-weight:300;font-size:12px;letter-spacing:0.06em;color:var(--footer-copy);}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <span class="mark" id="markA">VERONIKA</span>
+      <span class="descriptor" id="descA"></span>
+    </a>
+    <div class="head-right">
+      <nav class="primary" id="navPrimary">
+        <a href="#therapy" data-i18n="navTherapy"></a>
+        <a href="#about" data-i18n="navAbout"></a>
+        <a href="#contact" data-i18n="navContact"></a>
+      </nav>
+      <div class="lang-switch">
+        <button type="button" id="btnCz">Česky</button>
+        <span class="divider"></span>
+        <button type="button" id="btnEn">English</button>
+      </div>
+      <button type="button" class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section id="top">
+  <div class="hero-inner">
+    <h1 data-i18n="h1"></h1>
+    <h2 data-i18n="h2"></h2>
+    <div class="rule"></div>
+    <p data-i18n="heroText"></p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-solid" data-i18n="ctaBook"></a>
+      <a href="#therapy" class="btn btn-outline" data-i18n="ctaMore"></a>
+    </div>
+  </div>
+</section>
+
+<section id="therapy">
+  <div class="wrap">
+    <h2 data-i18n="whyTitle"></h2>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-grid">
+    <div class="about-media">
+      <img src="assets/veronika-portrait.png" alt="Veronika Kuncová">
+      <blockquote data-i18n="quote"></blockquote>
+    </div>
+    <div class="about-copy">
+      <p class="eyebrow" data-i18n="aboutLabel"></p>
+      <h2>Veronika Kuncová</h2>
+      <p class="role" data-i18n="aboutRole"></p>
+      <div class="rule" style="margin:6px 0;"></div>
+      <p class="body" data-i18n="aboutP1"></p>
+      <p class="body secondary" data-i18n="aboutP2"></p>
+      <p class="body secondary" data-i18n="aboutP3"></p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p class="eyebrow" data-i18n="formLabel"></p>
+      <h2 data-i18n="formTitle"></h2>
+      <p class="intro" data-i18n="formIntro"></p>
+      <div class="contact-links">
+        <a href="tel:+420774172357">+420 774 172 357</a>
+        <a href="mailto:v.kuncova12@gmail.com">v.kuncova12@gmail.com</a>
+      </div>
+    </div>
+
+    <form id="contactForm">
+      <label>
+        <span data-i18n="fName"></span>
+        <input type="text" name="name" required autocomplete="name">
+      </label>
+      <label>
+        <span data-i18n="fEmail"></span>
+        <input type="email" name="email" required autocomplete="email">
+      </label>
+      <label>
+        <span data-i18n="fPhone"></span>
+        <input type="tel" name="phone" autocomplete="tel">
+      </label>
+      <label>
+        <span data-i18n="fMessage"></span>
+        <textarea name="message" rows="5"></textarea>
+      </label>
+      <button type="submit" data-i18n="fSubmit"></button>
+      <p class="sent-msg" id="sentMsg" data-i18n="fSent"></p>
+    </form>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-mark">
+        <span class="mark" id="markB">VERONIKA</span>
+        <span class="descriptor" id="descB"></span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <p class="label" data-i18n="contactLabel"></p>
+      <a href="tel:+420774172357">+420 774 172 357</a>
+      <a href="mailto:v.kuncova12@gmail.com">v.kuncova12@gmail.com</a>
+    </div>
+    <div class="footer-col">
+      <p class="label" data-i18n="addressLabel"></p>
+      <p class="addr">Gotthardská 2<br>Praha 6</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Veronika Kuncová, All Rights Reserved.</span>
+    <span>veronikakuncova.cz</span>
+  </div>
+</footer>
+
+<script>
+const COPY = {
+  cz: {
+    descriptor: 'KRANIOSAKRÁLNÍ TERAPIE',
+    navTherapy: 'Terapie', navAbout: 'O terapeutce', navContact: 'Kontakt',
+    h1: 'Kraniosakrální terapie',
+    h2: 'Dotek jako velmi jemná relaxační technika',
+    heroText: 'Kraniosakrální terapie je jemná relaxační metoda, která pracuje s autonomním nervovým systémem a pomáhá zklidnit tělo, nastartovat samoléčebné procesy a nalézt rovnováhu. Ulevuje na fyzické i emoční úrovni, přináší úlevu od bolesti po úrazech, dlouhodobých potížích a pomáhá uvolňovat uložené emoce. Jako komplementární terapie doplňuje moderní medicínu a probíhá v klidném prostředí s respektem k připravenosti těla.',
+    ctaBook: 'Domluvit sezení', ctaMore: 'Proč terapie',
+    whyTitle: 'Proč si vybrat kraniosakrální terapii?',
+    cards: [
+      { num: '01', title: 'Zklidnění stresu a úzkosti', body: 'Kraniosakrální terapie přináší úlevu a klid, což pomáhá odbourat každodenní stres a úzkosti.' },
+      { num: '02', title: 'Úleva od chronických bolestí', body: 'Tato terapie je efektivním způsobem, jak se zbavit dlouhodobé bolesti a zlepšit celkovou pohodu.' },
+      { num: '03', title: 'Podpora emocí a psychické pohody', body: 'Kraniosakrální terapie pomáhá v uvolnění emocí a zvyšuje psychickou odolnost jednotlivce.' },
+      { num: '04', title: 'Zlepšení spánkové kvality', body: 'Terapie napomáhá k lepšímu spánku a celkové regeneraci těla a mysli.' }
+    ],
+    formLabel: 'Kontakt', formTitle: 'Domluvme si sezení',
+    formIntro: 'Napište mi, na co se chcete zaměřit, a společně najdeme vhodný termín. Odpovídám obvykle do 24 hodin.',
+    fName: 'Jméno', fEmail: 'E-mail', fPhone: 'Telefon (nepovinné)', fMessage: 'Zpráva',
+    fSubmit: 'Odeslat zprávu',
+    fSent: 'Děkuji, zpráva byla odeslána. Ozvu se vám co nejdříve.',
+    aboutLabel: 'O terapeutce', aboutRole: 'kraniosakrální terapeutka',
+    aboutP1: 'Jako zkušená kraniosakrální terapeutka, s vášní pro práci s tělem a duší, vás velmi ráda doprovodím na cestě k nalezení vnitřní rovnováhy a podpořím přirozené schopnosti regenerace vašeho těla.',
+    aboutP2: 'Vždy mě fascinovala síla doteku a schopnost těla léčit samo sebe. Tato cesta mě dovedla ke studiu kraniosakrální terapie, jemné, ale účinné metody, která pracuje s centrálním nervovým systémem a pomáhá tělu uvolňovat hluboko uložené napětí. Díky své praxi jsem měla možnost vidět, jak tato terapie může pozitivně ovlivnit nejen fyzické zdraví, ale i emocionální a mentální pohodu.',
+    aboutP3: 'Každý člověk je jedinečný, a proto ke každému přistupuji individuálně. Vytvářím bezpečné a podporující prostředí, kde můžete vnímat své tělo a prohloubit spojení se sebou samými. Během našich sezení vás budu jemně provázet na cestě ke zdraví, uvolnění a celkové harmonii.',
+    quote: '„Každý krok na naší cestě je důležitý“',
+    contactLabel: 'Kontakt', addressLabel: 'Adresa'
+  },
+  en: {
+    descriptor: 'CRANIOSACRAL THERAPY',
+    navTherapy: 'Therapy', navAbout: 'About', navContact: 'Contact',
+    h1: 'Craniosacral Therapy',
+    h2: 'touch as a very gentle relaxation technique',
+    heroText: "Craniosacral therapy is a gentle relaxation method that works with the autonomic nervous system, helping to calm the body, initiate self-healing processes, and restore balance. It brings relief on both physical and emotional levels, eases pain after injuries or long-term issues, and helps release stored emotions. As a complementary therapy, it supports modern medicine in a calm environment, respecting the body's readiness.",
+    ctaBook: 'Book a session', ctaMore: 'Why therapy',
+    whyTitle: 'Why choose Craniosacral Therapy?',
+    cards: [
+      { num: '01', title: 'Stress and Anxiety Relief', body: 'Provides calm and alleviates everyday stress and anxiety.' },
+      { num: '02', title: 'Chronic Pain Relief', body: 'Helps eliminate long-term pain and improves overall well-being.' },
+      { num: '03', title: 'Emotional and Mental Support', body: 'Releases emotions and enhances psychological resilience.' },
+      { num: '04', title: 'Improves Sleep Quality', body: 'Promotes better sleep and overall regeneration of body and mind.' }
+    ],
+    formLabel: 'Contact', formTitle: "Let's arrange a session",
+    formIntro: 'Tell me what you would like to focus on and we will find a time that suits you. I usually reply within 24 hours.',
+    fName: 'Name', fEmail: 'Email', fPhone: 'Phone (optional)', fMessage: 'Message',
+    fSubmit: 'Send message',
+    fSent: 'Thank you — your message has been sent. I will be in touch shortly.',
+    aboutLabel: 'About the therapist', aboutRole: 'Craniosacral Therapist',
+    aboutP1: "As an experienced therapist with a passion for body and soul work, I am here to guide you toward finding inner balance and supporting your body's natural ability to heal itself.",
+    aboutP2: "I've always been fascinated by the power of touch and the body's ability to heal itself. This led me to study craniosacral therapy, a gentle yet effective method that works with the central nervous system, releasing deeply held tension. Through my practice, I have witnessed how this therapy can positively affect not just physical health but also emotional and mental well-being.",
+    aboutP3: 'Everyone is unique, and I approach each individual with care. I create a safe and supportive environment where you can connect with your body and deepen the relationship with yourself. In our sessions, I will gently guide you towards health, relaxation, and overall harmony.',
+    quote: '"Every step on our journey is important"',
+    contactLabel: 'Contact', addressLabel: 'Address'
+  }
+};
+
+let lang = localStorage.getItem('vk_lang') || 'cz';
+
+function fitOne(mark, desc){
+  if(!mark || !desc) return;
+  const ls = parseFloat(getComputedStyle(mark).letterSpacing) || 0;
+  const markInk = mark.getBoundingClientRect().width - 2 * ls;
+  const n = (desc.textContent || '').replace(/\s/g, '').length;
+  if(!markInk || n < 2) return;
+  desc.style.letterSpacing = '0px';
+  desc.style.textIndent = '0px';
+  const ink0 = desc.getBoundingClientRect().width;
+  const track = (0.95 * markInk - ink0) / (n - 1);
+  desc.style.letterSpacing = track + 'px';
+  desc.style.textIndent = track + 'px';
+}
+function fitDescriptor(){
+  fitOne(document.getElementById('markA'), document.getElementById('descA'));
+  fitOne(document.getElementById('markB'), document.getElementById('descB'));
+}
+
+function renderCards(list){
+  const wrap = document.getElementById('cards');
+  wrap.innerHTML = '';
+  list.forEach(c => {
+    const el = document.createElement('article');
+    el.className = 'card';
+    el.innerHTML = `<span class="num">${c.num}</span><h3>${c.title}</h3><p>${c.body}</p>`;
+    wrap.appendChild(el);
+  });
+}
+
+function applyLang(l){
+  lang = l;
+  localStorage.setItem('vk_lang', l);
+  document.documentElement.lang = l;
+  const t = COPY[l];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if(t[key] !== undefined) el.textContent = t[key];
+  });
+  document.getElementById('descA').textContent = t.descriptor;
+  document.getElementById('descB').textContent = t.descriptor;
+  renderCards(t.cards);
+  document.getElementById('btnCz').classList.toggle('active', l === 'cz');
+  document.getElementById('btnEn').classList.toggle('active', l === 'en');
+  document.title = l === 'cz'
+    ? 'Veronika Kuncová — Kraniosakrální terapie'
+    : 'Veronika Kuncová — Craniosacral Therapy';
+  requestAnimationFrame(fitDescriptor);
+}
+
+document.getElementById('btnCz').addEventListener('click', () => applyLang('cz'));
+document.getElementById('btnEn').addEventListener('click', () => applyLang('en'));
+
+const burger = document.getElementById('burger');
+const navPrimary = document.getElementById('navPrimary');
+burger.addEventListener('click', () => {
+  const open = navPrimary.classList.toggle('open');
+  burger.classList.toggle('open', open);
+});
+navPrimary.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navPrimary.classList.remove('open');
+  burger.classList.remove('open');
+}));
+
+document.getElementById('contactForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  document.getElementById('sentMsg').classList.add('show');
+  e.target.reset();
+});
+
+window.addEventListener('resize', () => { fitDescriptor(); });
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitDescriptor);
+
+applyLang(lang);
+</script>
+</body>
+</html>
