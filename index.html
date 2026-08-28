@@ -207,7 +207,7 @@
       </div>
     </div>
 
-    <form id="contactForm">
+    <form id="contactForm" action="https://formspree.io/f/meaqqqnl" method="POST">
       <label>
         <span data-i18n="fName"></span>
         <input type="text" name="name" required autocomplete="name">
@@ -375,10 +375,34 @@ navPrimary.querySelectorAll('a').forEach(a => a.addEventListener('click', () => 
   burger.classList.remove('open');
 }));
 
-document.getElementById('contactForm').addEventListener('submit', (e) => {
+const contactForm = document.getElementById('contactForm');
+contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  document.getElementById('sentMsg').classList.add('show');
-  e.target.reset();
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+  const originalLabel = submitBtn.textContent;
+  submitBtn.disabled = true;
+  try {
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      document.getElementById('sentMsg').classList.add('show');
+      contactForm.reset();
+    } else {
+      alert(lang === 'cz'
+        ? 'Zprávu se nepodařilo odeslat. Zkuste to prosím znovu, nebo mi napište přímo na jsem@veronikakuncova.cz.'
+        : 'Something went wrong sending your message. Please try again, or email me directly at jsem@veronikakuncova.cz.');
+    }
+  } catch (err) {
+    alert(lang === 'cz'
+      ? 'Zprávu se nepodařilo odeslat. Zkuste to prosím znovu, nebo mi napište přímo na jsem@veronikakuncova.cz.'
+      : 'Something went wrong sending your message. Please try again, or email me directly at jsem@veronikakuncova.cz.');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalLabel;
+  }
 });
 
 window.addEventListener('resize', () => { fitDescriptor(); });
