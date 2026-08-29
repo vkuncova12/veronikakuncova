@@ -76,8 +76,8 @@
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:clamp(16px,2.2vw,28px);}
   .card{background:var(--paper);padding:clamp(28px,3.4vw,42px);border-radius:2px;display:flex;flex-direction:column;gap:16px;}
   .card .num{font-weight:300;font-size:12px;letter-spacing:0.22em;color:var(--sage-deep);}
-  .card h3{margin:0;font-weight:300;font-size:clamp(18px,2.1vw,22px);line-height:1.3;color:var(--mark);text-wrap:balance;}
-  .card p{margin:0;font-weight:300;font-size:15px;line-height:1.75;color:var(--body-txt);text-wrap:pretty;}
+  .card h3{margin:0;font-weight:300;font-size:clamp(18px,2.1vw,22px);line-height:1.3;min-height:2.6em;color:var(--mark);text-wrap:balance;}
+  .card p{margin:0;font-weight:300;font-size:15px;line-height:1.75;min-height:7em;color:var(--body-txt);text-wrap:pretty;}
 
   section#about{padding:clamp(64px,11vh,140px) clamp(20px,5vw,56px);}
   .about-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(38px,6vw,80px);align-items:start;}
@@ -272,8 +272,8 @@ const COPY = {
       { num: '02', title: 'Úleva od chronických bolestí', body: 'Tato terapie je efektivním způsobem, jak se zbavit dlouhodobé bolesti a zlepšit celkovou pohodu.' },
       { num: '03', title: 'Podpora emocí a psychické pohody', body: 'Kraniosakrální terapie pomáhá v uvolnění emocí a zvyšuje psychickou odolnost jednotlivce.' },
       { num: '04', title: 'Zlepšení kvality spánku', body: 'Terapie napomáhá k lepšímu spánku a celkové regeneraci těla a mysli.' },
-      { num: '05', title: 'Zmírnění bolestí hlavy a migrén', body: 'Šetrná práce s lebečními strukturami a nervovým systémem pomáhá snížit četnost napěťových bolestí hlavy i migrén.' },
-      { num: '06', title: 'Vhodná i pro miminka a těhotné', body: 'Šetrnou práci s novorozenci a těhotnými ženami uznávají i profesní asociace jako americký Upledger Institute nebo švýcarská Cranio Suisse.' }
+      { num: '05', title: 'Zmírnění bolestí hlavy a migrén', body: 'Šetrná práce s lebeční oblastí pomáhá snížit četnost bolestí hlavy i migrén.' },
+      { num: '06', title: 'Vhodná i pro miminka a těhotné', body: 'Šetrná a bezpečná metoda vhodná pro novorozence, kojence i ženy v těhotenství.' }
     ],
     formLabel: 'Kontakt', formTitle: 'Domluvme si sezení',
     formIntro: 'Napište mi, na co se chcete zaměřit, a společně najdeme vhodný termín. Odpovídám obvykle do 24 hodin.',
@@ -300,8 +300,8 @@ const COPY = {
       { num: '02', title: 'Chronic Pain Relief', body: 'Helps eliminate long-term pain and improves overall well-being.' },
       { num: '03', title: 'Emotional and Mental Support', body: 'Releases emotions and enhances psychological resilience.' },
       { num: '04', title: 'Improves Sleep Quality', body: 'Promotes better sleep and overall regeneration of body and mind.' },
-      { num: '05', title: 'Fewer Headaches and Migraines', body: 'Gentle work with the skull and nervous system helps reduce the frequency of tension headaches and migraines.' },
-      { num: '06', title: 'Gentle Enough for Newborns and Pregnancy', body: 'Working with infants from birth and expectant mothers is a recognized area of practice, taught by bodies such as the Upledger Institute (US) and Cranio Suisse (Switzerland).' }
+      { num: '05', title: 'Fewer Headaches and Migraines', body: 'Gentle work with the skull area helps reduce the frequency of headaches and migraines.' },
+      { num: '06', title: 'Gentle Enough for Newborns and Pregnancy', body: 'A gentle, safe method suitable for newborns, infants, and women during pregnancy.' }
     ],
     formLabel: 'Contact', formTitle: "Let's arrange a session",
     formIntro: 'Tell me what you would like to focus on and we will find a time that suits you. I usually reply within 24 hours.',
