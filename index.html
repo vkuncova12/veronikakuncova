@@ -103,14 +103,15 @@
   .contact-links a:hover{color:var(--sage-deep);}
 
   form{background:var(--paper);padding:clamp(26px,3.4vw,44px);display:flex;flex-direction:column;gap:20px;}
+  #formFields{display:flex;flex-direction:column;gap:20px;}
   form label{display:flex;flex-direction:column;gap:8px;}
   form label span{font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--label);}
   form input,form textarea{font:inherit;font-weight:300;font-size:16px;color:var(--charcoal);padding:13px 14px;background:var(--cream);border:none;border-radius:2px;outline:none;min-height:44px;width:100%;box-sizing:border-box;}
   form textarea{line-height:1.65;resize:vertical;min-height:auto;}
   form button{margin-top:4px;padding:16px 34px;min-height:44px;cursor:pointer;background:var(--sage-deep);color:var(--cream);border:none;border-radius:2px;font:inherit;font-size:12px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;}
   form button:hover{background:var(--mark);}
-  .sent-msg{margin:0;font-weight:300;font-size:15px;line-height:1.6;color:var(--sage-deep);display:none;}
-  .sent-msg.show{display:block;}
+  .sent-msg{margin:0;font-weight:300;font-size:17px;line-height:1.65;color:var(--sage-deep);text-align:center;display:none;}
+  .sent-msg.show{display:block;padding:14px 0;}
 
   footer{background:var(--charcoal);color:var(--cream);padding:clamp(60px,10vh,118px) clamp(20px,5vw,56px) 32px;}
   .footer-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(38px,6vw,72px);align-items:start;}
@@ -208,23 +209,25 @@
     </div>
 
     <form id="contactForm" action="https://formspree.io/f/meaqqqnl" method="POST">
-      <label>
-        <span data-i18n="fName"></span>
-        <input type="text" name="name" required autocomplete="name">
-      </label>
-      <label>
-        <span data-i18n="fEmail"></span>
-        <input type="email" name="email" required autocomplete="email">
-      </label>
-      <label>
-        <span data-i18n="fPhone"></span>
-        <input type="tel" name="phone" autocomplete="tel">
-      </label>
-      <label>
-        <span data-i18n="fMessage"></span>
-        <textarea name="message" rows="5"></textarea>
-      </label>
-      <button type="submit" data-i18n="fSubmit"></button>
+      <div id="formFields">
+        <label>
+          <span data-i18n="fName"></span>
+          <input type="text" name="name" required autocomplete="name">
+        </label>
+        <label>
+          <span data-i18n="fEmail"></span>
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label>
+          <span data-i18n="fPhone"></span>
+          <input type="tel" name="phone" autocomplete="tel">
+        </label>
+        <label>
+          <span data-i18n="fMessage"></span>
+          <textarea name="message" rows="5"></textarea>
+        </label>
+        <button type="submit" data-i18n="fSubmit"></button>
+      </div>
       <p class="sent-msg" id="sentMsg" data-i18n="fSent"></p>
     </form>
   </div>
@@ -274,7 +277,7 @@ const COPY = {
     formIntro: 'Napište mi, na co se chcete zaměřit, a společně najdeme vhodný termín. Odpovídám obvykle do 24 hodin.',
     fName: 'Jméno', fEmail: 'E-mail', fPhone: 'Telefon (nepovinné)', fMessage: 'Zpráva',
     fSubmit: 'Odeslat zprávu',
-    fSent: 'Děkuji, zpráva byla odeslána. Ozvu se vám co nejdříve.',
+    fSent: 'Děkuji, vaše zpráva je na cestě. Ozvu se vám do 24 hodin.',
     aboutLabel: 'O terapeutce', aboutRole: 'kraniosakrální terapeutka',
     aboutP1: 'Jako zkušená kraniosakrální terapeutka, s vášní pro práci s tělem a duší, vás velmi ráda doprovodím na cestě k nalezení vnitřní rovnováhy a podpořím přirozené schopnosti regenerace vašeho těla.',
     aboutP2: 'Vždy mě fascinovala síla doteku a schopnost těla léčit samo sebe. Tato cesta mě dovedla ke studiu kraniosakrální terapie, jemné, ale účinné metody, která pracuje s centrálním nervovým systémem a pomáhá tělu uvolňovat hluboko uložené napětí. Díky své praxi jsem měla možnost vidět, jak tato terapie může pozitivně ovlivnit nejen fyzické zdraví, ale i emocionální a mentální pohodu.',
@@ -300,7 +303,7 @@ const COPY = {
     formIntro: 'Tell me what you would like to focus on and we will find a time that suits you. I usually reply within 24 hours.',
     fName: 'Name', fEmail: 'Email', fPhone: 'Phone (optional)', fMessage: 'Message',
     fSubmit: 'Send message',
-    fSent: 'Thank you — your message has been sent. I will be in touch shortly.',
+    fSent: 'Thank you—your message is on its way. We will get back to you within 24 hours.',
     aboutLabel: 'About the therapist', aboutRole: 'Craniosacral Therapist',
     aboutP1: "As an experienced therapist with a passion for body and soul work, I am here to guide you toward finding inner balance and supporting your body's natural ability to heal itself.",
     aboutP2: "I've always been fascinated by the power of touch and the body's ability to heal itself. This led me to study craniosacral therapy, a gentle yet effective method that works with the central nervous system, releasing deeply held tension. Through my practice, I have witnessed how this therapy can positively affect not just physical health but also emotional and mental well-being.",
@@ -388,6 +391,7 @@ contactForm.addEventListener('submit', async (e) => {
       headers: { 'Accept': 'application/json' }
     });
     if (response.ok) {
+      document.getElementById('formFields').style.display = 'none';
       document.getElementById('sentMsg').classList.add('show');
       contactForm.reset();
     } else {
