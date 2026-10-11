@@ -3,8 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Veronika Kuncová — Kraniosakrální terapie</title>
-<meta name="description" content="Kraniosakrální terapie v Praze. Jemná relaxační metoda pro tělo i mysl.">
+<title>Kraniosakrální terapie Praha 6 — Veronika Kuncová</title>
+<meta name="description" content="Kraniosakrální terapie v Praze 6 — jemná relaxační metoda pro tělo i mysl. Veronika Kuncová.">
+<link rel="canonical" href="https://veronikakuncova.cz/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:url" content="https://veronikakuncova.cz/">
+<meta property="og:title" content="Kraniosakrální terapie Praha 6 — Veronika Kuncová">
+<meta property="og:description" content="Jemná relaxační metoda pro tělo i mysl. Praha 6.">
+<meta property="og:image" content="https://veronikakuncova.cz/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Veronika Kuncová — kraniosakrální terapie","url":"https://veronikakuncova.cz/","telephone":"+420774172357","email":"jsem@veronikakuncova.cz","priceRange":"2200 CZK","location":[{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"Gotthardská 2","postalCode":"160 00","addressLocality":"Praha 6","addressCountry":"CZ"}},{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"Slunná 27","addressLocality":"Praha 6","addressCountry":"CZ"}}]}
+</script>
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
@@ -85,7 +98,7 @@
     .burger{display:flex;}
   }
 
-  section#top,section#therapy,section#about,section#contact{scroll-margin-top:120px;}
+  section#top,section#therapy,section#about,section#price,section#contact{scroll-margin-top:120px;}
   section#top{padding:clamp(40px,7vh,92px) clamp(20px,5vw,56px) clamp(40px,6vh,80px);}
   .hero-inner{max-width:900px;margin:0 auto;text-align:center;}
   h1{margin:0;font-weight:200;font-size:clamp(34px,6.6vw,74px);line-height:1.1;letter-spacing:0.05em;text-transform:uppercase;color:var(--mark);text-wrap:balance;}
@@ -99,6 +112,18 @@
   .btn-outline{border:1px solid var(--sage-deep);color:var(--mark);}
   .btn-outline:hover{border-color:var(--sage-deep);color:var(--mark);}
 
+  #session{padding:0 clamp(20px,5vw,56px) clamp(56px,9vh,110px);}
+  .carousel{max-width:1180px;margin:0 auto;}
+  .carousel-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;border-radius:18px;}
+  .carousel-track::-webkit-scrollbar{display:none;}
+  .carousel-track:focus-visible{outline:2px solid var(--sage-deep);outline-offset:4px;}
+  .slide{flex:0 0 min(88%,460px);margin:0;scroll-snap-align:start;border-radius:18px;overflow:hidden;background:var(--cream);}
+  .slide img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;}
+  .carousel-nav{display:flex;justify-content:flex-end;gap:10px;margin-top:16px;}
+  .car-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--sage-deep);background:transparent;color:var(--sage-deep);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;transition:background 200ms,color 200ms;}
+  .car-btn:hover{background:var(--sage-deep);color:var(--cream);}
+  .car-btn[disabled]{opacity:.35;cursor:default;pointer-events:none;}
+  .car-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
   section#therapy{background:var(--sage-deep);padding:clamp(64px,10vh,128px) clamp(20px,5vw,56px);}
   section#therapy h2{margin:0 0 clamp(40px,6vw,68px);font-weight:200;font-size:clamp(24px,3.7vw,41px);line-height:1.24;letter-spacing:0.06em;text-transform:uppercase;color:var(--cream);max-width:760px;text-wrap:balance;}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:clamp(16px,2.2vw,28px);}
@@ -130,6 +155,15 @@
   .contact-links a:last-child{font-size:16px;}
   .contact-links a:hover{color:var(--sage-deep);}
 
+  section#price{background:var(--cream);padding:clamp(64px,10vh,120px) clamp(20px,5vw,56px);text-align:center;}
+  .price-inner{max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:clamp(8px,1.2vw,14px);}
+  section#price h2{margin:0 0 clamp(14px,2vw,24px);font-weight:200;font-size:clamp(24px,3.7vw,41px);line-height:1.24;letter-spacing:0.06em;text-transform:uppercase;color:var(--mark);}
+  .price-title{margin:0;font-weight:300;font-size:clamp(26px,3.4vw,40px);line-height:1.2;letter-spacing:0.02em;color:var(--mark);}
+  .price-title span + span::before{content:" · ";}
+  .price-amount{margin:0;font-weight:300;font-size:clamp(20px,2.4vw,28px);letter-spacing:0.06em;color:var(--ink-soft);}
+  .storno-card{background:var(--paper);border-radius:18px;padding:clamp(22px,2.6vw,30px) clamp(24px,3vw,34px);}
+  .storno-card h3{margin:0 0 10px;font-weight:300;font-size:clamp(18px,2vw,21px);letter-spacing:0.04em;color:var(--mark);}
+  .storno-card p{margin:0;font-weight:300;font-size:15px;line-height:1.7;color:var(--body-txt);}
   form{background:var(--paper);padding:clamp(26px,3.4vw,44px);border-radius:18px;display:flex;flex-direction:column;gap:20px;}
   #formFields{display:flex;flex-direction:column;gap:20px;}
   form label{display:flex;flex-direction:column;gap:8px;}
@@ -138,6 +172,10 @@
   form textarea{line-height:1.65;resize:vertical;min-height:auto;}
   form button{margin-top:4px;padding:16px 34px;min-height:44px;cursor:pointer;background:var(--sage-deep);color:var(--cream);border:none;border-radius:10px;font:inherit;font-size:12px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;}
   form button:hover{background:var(--mark);}
+  form label.consent{flex-direction:row;align-items:flex-start;gap:10px;}
+  form label.consent input{width:auto;min-height:0;padding:0;margin:4px 0 0;flex:none;}
+  form label.consent span{text-transform:none;letter-spacing:0;font-size:14px;font-weight:400;line-height:1.5;}
+  form label.consent a{text-decoration:underline;}
   .sent-msg{margin:0;font-weight:300;font-size:17px;line-height:1.65;color:var(--sage-deep);text-align:center;display:none;}
   .sent-msg.show{display:block;padding:14px 0;}
 
@@ -172,6 +210,7 @@
       <nav class="primary" id="navPrimary">
         <a href="#therapy" data-i18n="navTherapy"></a>
         <a href="#about" data-i18n="navAbout"></a>
+        <a href="#price" data-i18n="navPrice"></a>
         <a href="#contact" data-i18n="navContact"></a>
       </nav>
       <div class="lang-switch">
@@ -199,6 +238,21 @@
   </div>
 </section>
 
+<section id="session">
+  <div class="carousel" id="carousel" role="region" aria-roledescription="carousel" aria-label="Fotografie ze sezení">
+    <div class="carousel-track" id="carouselTrack" tabindex="0">
+      <figure class="slide"><img src="assets/carousel-1.webp" alt="Jemný dotek rukou na hlavě klientky během sezení" width="1000" height="667" loading="lazy" decoding="async"></figure>
+      <figure class="slide"><img src="assets/carousel-2.webp" alt="Detail ruky položené na dece během sezení" width="1000" height="667" loading="lazy" decoding="async"></figure>
+      <figure class="slide"><img src="assets/carousel-3.webp" alt="Veronika při sezení, klientka leží pod dekou" width="1000" height="667" loading="lazy" decoding="async"></figure>
+      <figure class="slide"><img src="assets/carousel-4.webp" alt="Lehátko s dekou a válci v tlumeném světle" width="1000" height="667" loading="lazy" decoding="async"></figure>
+    </div>
+    <div class="carousel-nav">
+      <button type="button" class="car-btn" id="carPrev" aria-label="Předchozí fotografie"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button type="button" class="car-btn" id="carNext" aria-label="Další fotografie"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+</section>
+
 <section id="therapy">
   <div class="wrap">
     <h2 data-i18n="whyTitle"></h2>
@@ -209,7 +263,7 @@
 <section id="about">
   <div class="about-grid">
     <div class="about-media">
-      <img src="assets/veronika-portrait.png" alt="Veronika Kuncová">
+      <img src="assets/veronika-portrait.webp" alt="Veronika Kuncová" width="1000" height="1499" loading="lazy" decoding="async">
       <blockquote data-i18n="quote"></blockquote>
     </div>
     <div class="about-copy">
@@ -224,6 +278,14 @@
   </div>
 </section>
 
+<section id="price">
+  <div class="price-inner">
+    <h2 data-i18n="priceTitle"></h2>
+    <p class="price-title"><span data-i18n="priceLabel"></span><span data-i18n="priceDetail"></span></p>
+    <p class="price-amount" data-i18n="priceAmount"></p>
+  </div>
+</section>
+
 <section id="contact">
   <div class="contact-grid">
     <div class="contact-info">
@@ -234,6 +296,10 @@
         <a href="tel:+420774172357">+420 774 172 357</a>
         <a href="mailto:jsem@veronikakuncova.cz">jsem@veronikakuncova.cz</a>
       </div>
+    <div class="storno-card">
+      <h3 data-i18n="stornoTitle"></h3>
+      <p data-i18n="stornoText"></p>
+    </div>
     </div>
 
     <form id="contactForm" action="https://formspree.io/f/meaqqqnl" method="POST">
@@ -254,11 +320,16 @@
           <span data-i18n="fMessage"></span>
           <textarea name="message" rows="5"></textarea>
         </label>
+        <label class="consent">
+          <input type="checkbox" name="consent" value="ano" required>
+          <span data-i18n-html="fConsent"></span>
+        </label>
         <button type="submit" data-i18n="fSubmit"></button>
       </div>
       <p class="sent-msg" id="sentMsg" data-i18n="fSent"></p>
     </form>
   </div>
+
 </section>
 
 <footer id="footer">
@@ -276,7 +347,7 @@
     </div>
     <div class="footer-col">
       <p class="label" data-i18n="addressLabel"></p>
-      <p class="addr">Gotthardská 2<br>Praha 6</p>
+      <p class="addr">Gotthardská 2, Praha 6<br>Slunná 27, Praha 6</p>
     </div>
   </div>
   <div class="footer-bottom">
@@ -289,22 +360,23 @@
 const COPY = {
   cz: {
     descriptor: 'KRANIOSAKRÁLNÍ TERAPIE',
-    navTherapy: 'Terapie', navAbout: 'O Veronice', navContact: 'Kontakt',
+    navTherapy: 'Terapie', navAbout: 'O Veronice', navPrice: 'Cena', navContact: 'Kontakt',
     h1: 'Kraniosakrální terapie',
     h2: 'Dotek jako velmi jemná relaxační technika',
-    heroText: 'Kraniosakrální terapie je jemná relaxační metoda, která pracuje s autonomním nervovým systémem a pomáhá zklidnit tělo, nastartovat samoléčebné procesy a nalézt rovnováhu. Ulevuje na fyzické i emoční úrovni, přináší úlevu od bolesti po úrazech, dlouhodobých potížích a pomáhá uvolňovat uložené emoce. Jako komplementární terapie doplňuje moderní medicínu a probíhá v klidném prostředí s respektem k připravenosti těla.',
+    heroText: 'Kraniosakrální terapie je jemná relaxační metoda. Velmi lehkým dotekem vytváří podmínky, ve kterých se tělo i mysl mohou zklidnit a najít rovnováhu — na fyzické i emoční úrovni. Probíhá v klidném prostředí s respektem k připravenosti těla. Kraniosakrální terapie není zdravotní péče a lékařskou léčbu nenahrazuje, ale výborně ji doplňuje jako prostor pro uvolnění a odpočinek.',
     ctaBook: 'Domluvit sezení', ctaMore: 'Proč terapie',
     whyTitle: 'Proč si vybrat kraniosakrální terapii?',
     cards: [
-      { num: '01', title: 'Zklidnění stresu a úzkosti', body: 'Kraniosakrální terapie přináší úlevu a klid, což pomáhá odbourat každodenní stres a úzkosti.' },
-      { num: '02', title: 'Úleva od chronických bolestí', body: 'Tato terapie je efektivním způsobem, jak se zbavit dlouhodobé bolesti a zlepšit celkovou pohodu.' },
-      { num: '03', title: 'Podpora emocí a psychické pohody', body: 'Kraniosakrální terapie pomáhá v uvolnění emocí a zvyšuje psychickou odolnost jednotlivce.' },
-      { num: '04', title: 'Zlepšení kvality spánku', body: 'Terapie napomáhá k lepšímu spánku a celkové regeneraci těla a mysli.' },
-      { num: '05', title: 'Zmírnění bolestí hlavy a migrén', body: 'Šetrná práce s lebeční oblastí pomáhá snížit četnost bolestí hlavy i migrén.' },
-      { num: '06', title: 'Vhodná i pro miminka a těhotné', body: 'Šetrná a bezpečná metoda vhodná pro novorozence, kojence i ženy v těhotenství.' }
+      { num: '01', title: 'Zklidnění stresu a napětí', body: 'Sezení nabízí klid a prostor, ve kterém se může uvolnit každodenní napětí.' },
+      { num: '02', title: 'Uvolnění dlouhodobého napětí', body: 'Velmi jemný dotek dává tělu prostor povolit napětí, které si nosíte měsíce i roky.' },
+      { num: '03', title: 'Podpora emocí a psychické pohody', body: 'Klidný prostor, ve kterém se můžete vnímat bez hodnocení a bez nutnosti cokoli vysvětlovat.' },
+      { num: '04', title: 'Prostor pro hluboký odpočinek', body: 'Sezení probíhá vleže, v klidu a bez nároků — čas pro odpočinek těla i mysli.' },
+      { num: '05', title: 'Napětí v oblasti hlavy a šíje', body: 'Velmi jemná práce s hlavou a šíjí pro chvíle, kdy cítíte napětí a tlak v hlavě.' },
+      { num: '06', title: 'Jemná i pro miminka a těhotné', body: 'Jemný dotek, který se přizpůsobí novorozencům, kojencům i ženám v těhotenství.' }
     ],
-    formLabel: 'Kontakt', formTitle: 'Domluvme si sezení',
-    formIntro: 'Napište mi, na co se chcete zaměřit, a společně najdeme vhodný termín. Odpovídám obvykle do 24 hodin.',
+    formLabel: 'Kontakt', formTitle: 'Domluvme si termín',
+    formIntro: 'Objednat se můžete formulářem, telefonem nebo e-mailem. Napište mi třeba jen „chci to zkusit“ — zbytek doladíme.',
+    fConsent: 'Souhlasím se zpracováním údajů podle <a href="ochrana-osobnich-udaju.html" target="_blank" rel="noopener">Zásad ochrany osobních údajů</a>.',
     fName: 'Jméno', fEmail: 'E-mail', fPhone: 'Telefon (nepovinné)', fMessage: 'Zpráva',
     fSubmit: 'Odeslat zprávu',
     fSent: 'Děkuji, vaše zpráva je na cestě. Ozvu se vám do 24 hodin.',
@@ -313,26 +385,32 @@ const COPY = {
     aboutP2: 'Vždy mě fascinovala síla doteku a schopnost těla léčit samo sebe. Tato cesta mě dovedla ke studiu kraniosakrální terapie, jemné, ale účinné metody, která pracuje s centrálním nervovým systémem a pomáhá tělu uvolňovat hluboko uložené napětí. Díky své praxi jsem měla možnost vidět, jak tato terapie může pozitivně ovlivnit nejen fyzické zdraví, ale i emocionální a mentální pohodu.',
     aboutP3: 'Každý člověk je jedinečný, a proto ke každému přistupuji individuálně. Vytvářím bezpečné a podporující prostředí, kde můžete vnímat své tělo a prohloubit spojení se sebou samými. Během našich sezení vás budu jemně provázet na cestě ke zdraví, uvolnění a celkové harmonii.',
     quote: '„Každý krok na naší cestě je důležitý“',
-    contactLabel: 'Kontakt', addressLabel: 'Adresa', privacyLink: 'Zásady ochrany osobních údajů'
+    contactLabel: 'Kontakt', addressLabel: 'Adresy', privacyLink: 'Zásady ochrany osobních údajů',
+    priceTitle: 'Cena', priceLabel: 'Ošetření', priceAmount: '2\u00a0200\u00a0Kč', priceDetail: '90 min',
+    stornoTitle: 'Zrušení termínu',
+    stornoText: 'Pokud se na domluvený termín nemůžete dostavit, napište nebo zavolejte mi prosím co nejdříve — uvolněný čas pak mohu nabídnout dalšímu člověku. Děkuji za ohleduplnost.',
+    carouselLabel: 'Fotografie ze sezení', prevLabel: 'Předchozí fotografie', nextLabel: 'Další fotografie',
+    carouselAlt: ['Jemný dotek rukou na hlavě klientky během sezení', 'Detail ruky položené na dece během sezení', 'Veronika při sezení, klientka leží pod dekou', 'Lehátko s dekou a válci v tlumeném světle']
   },
   en: {
     descriptor: 'CRANIOSACRAL THERAPY',
-    navTherapy: 'Therapy', navAbout: 'About', navContact: 'Contact',
+    navTherapy: 'Therapy', navAbout: 'About', navPrice: 'Price', navContact: 'Contact',
     h1: 'Craniosacral Therapy',
     h2: 'touch as a very gentle relaxation technique',
-    heroText: "Craniosacral therapy is a gentle relaxation method that works with the autonomic nervous system, helping to calm the body, initiate self-healing processes, and restore balance. It brings relief on both physical and emotional levels, eases pain after injuries or long-term issues, and helps release stored emotions. As a complementary therapy, it supports modern medicine in a calm environment, respecting the body's readiness.",
+    heroText: "Craniosacral therapy is a gentle relaxation method. With a very light touch, it creates conditions in which body and mind can settle and find balance — on both a physical and an emotional level. It takes place in a calm environment, respecting the body's readiness. Craniosacral therapy is not medical care and does not replace medical treatment, but it complements it very well as a space for relaxation and rest.",
     ctaBook: 'Book a session', ctaMore: 'Why therapy',
     whyTitle: 'Why choose Craniosacral Therapy?',
     cards: [
-      { num: '01', title: 'Stress and Anxiety Relief', body: 'Provides calm and alleviates everyday stress and anxiety.' },
-      { num: '02', title: 'Chronic Pain Relief', body: 'Helps eliminate long-term pain and improves overall well-being.' },
-      { num: '03', title: 'Emotional and Mental Support', body: 'Releases emotions and enhances psychological resilience.' },
-      { num: '04', title: 'Improves Sleep Quality', body: 'Promotes better sleep and overall regeneration of body and mind.' },
-      { num: '05', title: 'Fewer Headaches and Migraines', body: 'Gentle work with the skull area helps reduce the frequency of headaches and migraines.' },
-      { num: '06', title: 'Gentle Enough for Newborns and Pregnancy', body: 'A gentle, safe method suitable for newborns, infants, and women during pregnancy.' }
+      { num: '01', title: 'Calm for Stress and Tension', body: 'A quiet space where everyday tension can soften.' },
+      { num: '02', title: 'Releasing Long-Held Tension', body: 'A very gentle touch that gives the body room to let go of tension carried for months or years.' },
+      { num: '03', title: 'Emotional and Mental Support', body: 'A calm space where you can simply be, without judgement and without having to explain anything.' },
+      { num: '04', title: 'Space for Deep Rest', body: 'Sessions are done lying down, quietly and without expectations — time for body and mind to rest.' },
+      { num: '05', title: 'Tension in the Head and Neck', body: 'Very gentle work with the head and neck for moments when you feel tension and pressure.' },
+      { num: '06', title: 'Gentle Even for Babies and Pregnancy', body: 'A gentle touch that adapts to newborns, infants and women during pregnancy.' }
     ],
-    formLabel: 'Contact', formTitle: "Let's arrange a session",
-    formIntro: 'Tell me what you would like to focus on and we will find a time that suits you. I usually reply within 24 hours.',
+    formLabel: 'Contact', formTitle: "Let's arrange an appointment",
+    formIntro: 'You can book through the form, by phone or by email. Just write “I would like to try it” — we will sort out the rest.',
+    fConsent: 'I agree to the processing of my data as described in the <a href="ochrana-osobnich-udaju.html" target="_blank" rel="noopener">Privacy Policy</a>.',
     fName: 'Name', fEmail: 'Email', fPhone: 'Phone (optional)', fMessage: 'Message',
     fSubmit: 'Send message',
     fSent: 'Thank you—your message is on its way. We will get back to you within 24 hours.',
@@ -341,7 +419,12 @@ const COPY = {
     aboutP2: "I've always been fascinated by the power of touch and the body's ability to heal itself. This led me to study craniosacral therapy, a gentle yet effective method that works with the central nervous system, releasing deeply held tension. Through my practice, I have witnessed how this therapy can positively affect not just physical health but also emotional and mental well-being.",
     aboutP3: 'Everyone is unique, and I approach each individual with care. I create a safe and supportive environment where you can connect with your body and deepen the relationship with yourself. In our sessions, I will gently guide you towards health, relaxation, and overall harmony.',
     quote: '"Every step on our journey is important"',
-    contactLabel: 'Contact', addressLabel: 'Address', privacyLink: 'Privacy Policy'
+    contactLabel: 'Contact', addressLabel: 'Addresses', privacyLink: 'Privacy Policy',
+    priceTitle: 'Price', priceLabel: 'Session', priceAmount: 'CZK\u00a02,200', priceDetail: '90 min',
+    stornoTitle: 'Cancelling an appointment',
+    stornoText: 'If you cannot make an appointment, please write or call me as early as you can — I can then offer the time to someone else. Thank you for your consideration.',
+    carouselLabel: 'Photos from a session', prevLabel: 'Previous photo', nextLabel: 'Next photo',
+    carouselAlt: ['Gentle hands resting on a client\'s head during a session', 'Close-up of a hand resting on a blanket during a session', 'Veronika during a session, the client lying under a blanket', 'Treatment couch with a blanket and bolsters in soft light']
   }
 };
 
@@ -379,11 +462,19 @@ function renderCards(list){
 function applyLang(l){
   lang = l;
   localStorage.setItem('vk_lang', l);
-  document.documentElement.lang = l;
+  document.documentElement.lang = l === 'cz' ? 'cs' : 'en';
   const t = COPY[l];
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if(t[key] !== undefined) el.textContent = t[key];
+  });
+  document.querySelectorAll('.slide img').forEach((img, i) => { if (t.carouselAlt[i]) img.alt = t.carouselAlt[i]; });
+  document.getElementById('carousel').setAttribute('aria-label', t.carouselLabel);
+  document.getElementById('carPrev').setAttribute('aria-label', t.prevLabel);
+  document.getElementById('carNext').setAttribute('aria-label', t.nextLabel);
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if(t[key] !== undefined) el.innerHTML = t[key];
   });
   document.getElementById('descA').textContent = t.descriptor;
   document.getElementById('descB').textContent = t.descriptor;
@@ -391,10 +482,29 @@ function applyLang(l){
   document.getElementById('btnCz').classList.toggle('active', l === 'cz');
   document.getElementById('btnEn').classList.toggle('active', l === 'en');
   document.title = l === 'cz'
-    ? 'Veronika Kuncová — Kraniosakrální terapie'
-    : 'Veronika Kuncová — Craniosacral Therapy';
+    ? 'Kraniosakrální terapie Praha 6 — Veronika Kuncová'
+    : 'Craniosacral Therapy Prague 6 — Veronika Kuncová';
   requestAnimationFrame(fitDescriptor);
 }
+
+const carTrack = document.getElementById('carouselTrack');
+const carPrev = document.getElementById('carPrev');
+const carNext = document.getElementById('carNext');
+function carStep(){
+  const slide = carTrack.querySelector('.slide');
+  const gap = parseFloat(getComputedStyle(carTrack).columnGap) || 18;
+  return slide.getBoundingClientRect().width + gap;
+}
+function carUpdate(){
+  carPrev.disabled = carTrack.scrollLeft <= 2;
+  carNext.disabled = carTrack.scrollLeft + carTrack.clientWidth >= carTrack.scrollWidth - 2;
+}
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+carPrev.addEventListener('click', () => carTrack.scrollBy({ left: -carStep(), behavior: reduceMotion ? 'auto' : 'smooth' }));
+carNext.addEventListener('click', () => carTrack.scrollBy({ left: carStep(), behavior: reduceMotion ? 'auto' : 'smooth' }));
+carTrack.addEventListener('scroll', carUpdate, { passive: true });
+window.addEventListener('resize', carUpdate);
+carUpdate();
 
 document.getElementById('btnCz').addEventListener('click', () => applyLang('cz'));
 document.getElementById('btnEn').addEventListener('click', () => applyLang('en'));

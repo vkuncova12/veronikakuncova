@@ -107,6 +107,8 @@ const COPY = {
       </ul>
       <p>Účelem zpracování je odpovědět na váš dotaz a domluvit případné sezení. Právním základem je jednání o uzavření smlouvy (poskytnutí mnou nabízených služeb) na základě vaší žádosti, případně můj oprávněný zájem na vyřízení dotazu, který jste mi sami zaslali.</p>
 
+      <p>Do zprávy nemusíte psát nic, co sdělovat nechcete. Pokud do ní přesto uvedete údaje o svém zdravotním stavu, zpracovávám je výhradně na základě vašeho výslovného souhlasu (zaškrtnutí políčka u formuláře) a jen za účelem vyřízení vašeho dotazu. Souhlas můžete kdykoli odvolat e-mailem na <a href="mailto:jsem@veronikakuncova.cz">jsem@veronikakuncova.cz</a>.</p>
+
       <h2>Jak dlouho údaje uchovávám</h2>
       <p>Zprávy z kontaktního formuláře uchovávám po dobu nezbytnou k vyřízení vašeho dotazu. Pokud se staneme klienty, uchovávám kontaktní údaje po dobu trvání naší spolupráce a následně 10 let od konce příslušného zdaňovacího období z důvodu plnění zákonných povinností (zejména podle zákona o účetnictví a zákona o dani z přidané hodnoty).</p>
 
@@ -118,6 +120,9 @@ const COPY = {
         <li><strong>Google LLC</strong> (Gmail) — do této schránky mi chodí a odkud odpovídám na vaše zprávy.</li>
       </ul>
       <p>Žádné vaše údaje neprodávám ani nepředávám třetím stranám za účelem marketingu.</p>
+
+      <h2>Fotografie na webu</h2>
+      <p>Fotografie, na kterých jsou vidět klienti, zveřejňuji pouze s jejich souhlasem. Souhlas lze kdykoli odvolat e-mailem na <a href="mailto:jsem@veronikakuncova.cz">jsem@veronikakuncova.cz</a> — fotografii pak z webu odstraním.</p>
 
       <h2>Cookies a sledování</h2>
       <p>Tento web nepoužívá žádné analytické, reklamní ani sledovací cookies. Veškerý obsah včetně použitého písma je uložen přímo na tomto webu — při jeho prohlížení se nic nenačítá z externích serverů třetích stran.</p>
@@ -157,6 +162,8 @@ const COPY = {
       </ul>
       <p>This data is used to respond to your enquiry and arrange a possible session. The legal basis is taking steps at your request prior to entering into a contract (providing therapy), or my legitimate interest in responding to an enquiry you sent me directly.</p>
 
+      <p>You do not have to write anything you prefer not to share. If you nevertheless include information about your health, I process it solely on the basis of your explicit consent (the checkbox on the form) and only to handle your enquiry. You can withdraw consent at any time by emailing <a href="mailto:jsem@veronikakuncova.cz">jsem@veronikakuncova.cz</a>.</p>
+
       <h2>How long I keep your data</h2>
       <p>Messages from the contact form are kept only as long as necessary to handle your enquiry. If you become a client, I keep your contact details for the duration of our working relationship, and afterwards for as long as required by law for accounting and tax records, if you paid for a session.</p>
 
@@ -168,6 +175,9 @@ const COPY = {
         <li><strong>Google LLC</strong> (Gmail) — the inbox I receive and reply to your messages from.</li>
       </ul>
       <p>I do not sell your data or share it with third parties for marketing purposes.</p>
+
+      <h2>Photos on the website</h2>
+      <p>Photos in which clients can be seen are published only with their consent. Consent can be withdrawn at any time by emailing <a href="mailto:jsem@veronikakuncova.cz">jsem@veronikakuncova.cz</a> — I will then remove the photo from the website.</p>
 
       <h2>Cookies and tracking</h2>
       <p>This website does not use any analytics, advertising, or tracking cookies. The site loads the Raleway typeface from Google Fonts, which is technically required to display the page correctly — this transmits your browser's IP address to Google's servers.</p>
@@ -205,7 +215,7 @@ function fitDescriptor(){
 
 function applyLang(l){
   const t = COPY[l];
-  document.documentElement.lang = l;
+  document.documentElement.lang = l === 'cz' ? 'cs' : 'en';
   document.title = t.title + ' — Veronika Kuncová';
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
