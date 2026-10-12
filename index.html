@@ -11,18 +11,14 @@
 <meta property="og:url" content="https://veronikakuncova.cz/">
 <meta property="og:title" content="Kraniosakrální terapie Praha 6 — Veronika Kuncová">
 <meta property="og:description" content="Jemná relaxační metoda pro tělo i mysl. Praha 6.">
-<meta property="og:image" content="https://veronikakuncova.cz/assets/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://veronikakuncova.cz/assets/veronika-portrait.webp">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="1499">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Veronika Kuncová — kraniosakrální terapie","url":"https://veronikakuncova.cz/","telephone":"+420774172357","email":"jsem@veronikakuncova.cz","priceRange":"2200 CZK","location":[{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"Gotthardská 2","postalCode":"160 00","addressLocality":"Praha 6","addressCountry":"CZ"}},{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"Slunná 27","addressLocality":"Praha 6","addressCountry":"CZ"}}]}
 </script>
 <link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
 <style>
   @font-face{font-family:'Raleway';font-style:normal;font-weight:200;font-display:swap;
     src:url('assets/fonts/raleway-latin-200.woff2') format('woff2');
@@ -74,7 +70,7 @@
   .head-right{display:flex;align-items:center;gap:clamp(14px,3vw,28px);}
 
   nav.primary{display:flex;align-items:center;gap:clamp(18px,4vw,40px);}
-  nav.primary a{font-size:13px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mark);padding:8px 0;}
+  nav.primary a{white-space:nowrap;font-size:13px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mark);padding:8px 0;}
   nav.primary a:hover{color:var(--sage-deep);}
 
   .lang-switch{display:flex;align-items:stretch;}
@@ -133,9 +129,9 @@
   .card p{margin:0;font-weight:300;font-size:15px;line-height:1.75;min-height:7em;color:var(--body-txt);text-wrap:pretty;}
 
   section#about{padding:clamp(64px,11vh,140px) clamp(20px,5vw,56px);}
-  .about-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(38px,6vw,80px);align-items:start;}
+  .about-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(38px,6vw,80px);align-items:start;}
   .about-media{display:flex;flex-direction:column;gap:22px;}
-  .about-media img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 22%;background:var(--cream);border-radius:18px;}
+  .about-media img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center 35%;background:var(--cream);border-radius:18px;}
   .about-media blockquote{margin:0;font-weight:300;font-size:clamp(19px,2.4vw,25px);line-height:1.45;color:var(--mark);text-wrap:balance;}
   .about-copy{display:flex;flex-direction:column;gap:clamp(18px,2.4vw,26px);}
   .eyebrow{margin:0;font-size:11px;font-weight:400;letter-spacing:0.34em;text-transform:uppercase;color:var(--label);}
@@ -155,12 +151,19 @@
   .contact-links a:last-child{font-size:16px;}
   .contact-links a:hover{color:var(--sage-deep);}
 
-  section#price{background:var(--cream);padding:clamp(64px,10vh,120px) clamp(20px,5vw,56px);text-align:center;}
-  .price-inner{max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:clamp(8px,1.2vw,14px);}
-  section#price h2{margin:0 0 clamp(14px,2vw,24px);font-weight:200;font-size:clamp(24px,3.7vw,41px);line-height:1.24;letter-spacing:0.06em;text-transform:uppercase;color:var(--mark);}
-  .price-title{margin:0;font-weight:300;font-size:clamp(26px,3.4vw,40px);line-height:1.2;letter-spacing:0.02em;color:var(--mark);}
-  .price-title span + span::before{content:" · ";}
-  .price-amount{margin:0;font-weight:300;font-size:clamp(20px,2.4vw,28px);letter-spacing:0.06em;color:var(--ink-soft);}
+  section#price{background:var(--cream);padding:clamp(56px,8vw,96px) clamp(20px,5vw,56px);}
+  .price-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(36px,6vw,80px);align-items:start;}
+  section#price h2{margin:0;font-weight:200;font-size:clamp(27px,3.7vw,41px);line-height:1.24;letter-spacing:0.06em;text-transform:uppercase;color:var(--mark);}
+  .price-heading-part{display:block;}
+  .price-details{min-width:0;color:var(--mark);font-weight:300;}
+  section#price h3{margin:0 0 24px;font-size:clamp(23px,2.4vw,30px);line-height:1.35;font-weight:300;}
+  .price-facts{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:20px;border-top:1px solid var(--hair);padding:17px 0;}
+  .price-facts dt{font-size:13px;line-height:1.65;margin:0 0 8px;}
+  .price-facts dd{margin:0;font-size:clamp(20px,2.1vw,25px);line-height:1.4;white-space:nowrap;}
+  .price-location{margin-top:24px;border-top:1px solid var(--hair);padding-top:17px;}
+  .price-location-label{margin:0 0 12px;font-size:11px;line-height:1.65;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;}
+  .price-addresses{margin:0;display:grid;gap:7px;font-style:normal;font-size:16px;line-height:1.65;}
+  @media(max-width:640px){.price-inner{grid-template-columns:1fr;gap:34px;}}
   .storno-card{background:var(--paper);border-radius:18px;padding:clamp(22px,2.6vw,30px) clamp(24px,3vw,34px);}
   .storno-card h3{margin:0 0 10px;font-weight:300;font-size:clamp(18px,2vw,21px);letter-spacing:0.04em;color:var(--mark);}
   .storno-card p{margin:0;font-weight:300;font-size:15px;line-height:1.7;color:var(--body-txt);}
@@ -214,7 +217,7 @@
         <a href="#contact" data-i18n="navContact"></a>
       </nav>
       <div class="lang-switch">
-        <button type="button" id="btnCz">CZ</button>
+        <button type="button" id="btnCz">CS</button>
         <span class="divider"></span>
         <button type="button" id="btnEn">EN</button>
       </div>
@@ -244,7 +247,6 @@
       <figure class="slide"><img src="assets/carousel-1.webp" alt="Jemný dotek rukou na hlavě klientky během sezení" width="1000" height="667" loading="lazy" decoding="async"></figure>
       <figure class="slide"><img src="assets/carousel-2.webp" alt="Detail ruky položené na dece během sezení" width="1000" height="667" loading="lazy" decoding="async"></figure>
       <figure class="slide"><img src="assets/carousel-3.webp" alt="Veronika při sezení, klientka leží pod dekou" width="1000" height="667" loading="lazy" decoding="async"></figure>
-      <figure class="slide"><img src="assets/carousel-4.webp" alt="Lehátko s dekou a válci v tlumeném světle" width="1000" height="667" loading="lazy" decoding="async"></figure>
     </div>
     <div class="carousel-nav">
       <button type="button" class="car-btn" id="carPrev" aria-label="Předchozí fotografie"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
@@ -278,11 +280,20 @@
   </div>
 </section>
 
-<section id="price">
+<section id="price" aria-labelledby="priceHeading">
   <div class="price-inner">
-    <h2 data-i18n="priceTitle"></h2>
-    <p class="price-title"><span data-i18n="priceLabel"></span><span data-i18n="priceDetail"></span></p>
-    <p class="price-amount" data-i18n="priceAmount"></p>
+    <h2 id="priceHeading"><span class="price-heading-part" data-i18n="priceTitle"></span><span class="price-heading-part" data-i18n="pricePlaceTitle"></span></h2>
+    <div class="price-details">
+      <h3 data-i18n="priceLabel"></h3>
+      <dl class="price-facts">
+        <div><dt data-i18n="priceDurationLabel"></dt><dd data-i18n="priceDetail"></dd></div>
+        <div><dt data-i18n="priceCostLabel"></dt><dd data-i18n="priceAmount"></dd></div>
+      </dl>
+      <div class="price-location">
+        <p class="price-location-label" data-i18n="priceLocation"></p>
+        <address class="price-addresses"><span>Gotthardská 2</span><span>Slunná 27</span></address>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -386,11 +397,11 @@ const COPY = {
     aboutP3: 'Každý člověk je jedinečný, a proto ke každému přistupuji individuálně. Vytvářím bezpečné a podporující prostředí, kde můžete vnímat své tělo a prohloubit spojení se sebou samými. Během našich sezení vás budu jemně provázet na cestě ke zdraví, uvolnění a celkové harmonii.',
     quote: '„Každý krok na naší cestě je důležitý“',
     contactLabel: 'Kontakt', addressLabel: 'Adresy', privacyLink: 'Zásady ochrany osobních údajů',
-    priceTitle: 'Cena', priceLabel: 'Ošetření', priceAmount: '2\u00a0200\u00a0Kč', priceDetail: '90 min',
+    priceTitle: 'Cena', pricePlaceTitle: 'a místo', priceDurationLabel: 'Délka', priceCostLabel: 'Cena', priceLocation: 'Praha 6', priceLabel: 'Ošetření', priceAmount: '2\u00a0200\u00a0Kč', priceDetail: '90 minut',
     stornoTitle: 'Zrušení termínu',
     stornoText: 'Pokud se na domluvený termín nemůžete dostavit, napište nebo zavolejte mi prosím co nejdříve — uvolněný čas pak mohu nabídnout dalšímu člověku. Děkuji za ohleduplnost.',
     carouselLabel: 'Fotografie ze sezení', prevLabel: 'Předchozí fotografie', nextLabel: 'Další fotografie',
-    carouselAlt: ['Jemný dotek rukou na hlavě klientky během sezení', 'Detail ruky položené na dece během sezení', 'Veronika při sezení, klientka leží pod dekou', 'Lehátko s dekou a válci v tlumeném světle']
+    carouselAlt: ['Jemný dotek rukou na hlavě klientky během sezení', 'Detail ruky položené na dece během sezení', 'Veronika při sezení, klientka leží pod dekou']
   },
   en: {
     descriptor: 'CRANIOSACRAL THERAPY',
@@ -420,11 +431,11 @@ const COPY = {
     aboutP3: 'Everyone is unique, and I approach each individual with care. I create a safe and supportive environment where you can connect with your body and deepen the relationship with yourself. In our sessions, I will gently guide you towards health, relaxation, and overall harmony.',
     quote: '"Every step on our journey is important"',
     contactLabel: 'Contact', addressLabel: 'Addresses', privacyLink: 'Privacy Policy',
-    priceTitle: 'Price', priceLabel: 'Session', priceAmount: 'CZK\u00a02,200', priceDetail: '90 min',
+    priceTitle: 'Price', pricePlaceTitle: 'and location', priceDurationLabel: 'Duration', priceCostLabel: 'Price', priceLocation: 'Prague 6', priceLabel: 'Session', priceAmount: 'CZK\u00a02,200', priceDetail: '90 min',
     stornoTitle: 'Cancelling an appointment',
     stornoText: 'If you cannot make an appointment, please write or call me as early as you can — I can then offer the time to someone else. Thank you for your consideration.',
     carouselLabel: 'Photos from a session', prevLabel: 'Previous photo', nextLabel: 'Next photo',
-    carouselAlt: ['Gentle hands resting on a client\'s head during a session', 'Close-up of a hand resting on a blanket during a session', 'Veronika during a session, the client lying under a blanket', 'Treatment couch with a blanket and bolsters in soft light']
+    carouselAlt: ['Gentle hands resting on a client\'s head during a session', 'Close-up of a hand resting on a blanket during a session', 'Veronika during a session, the client lying under a blanket']
   }
 };
 
@@ -468,7 +479,7 @@ function applyLang(l){
     const key = el.getAttribute('data-i18n');
     if(t[key] !== undefined) el.textContent = t[key];
   });
-  document.querySelectorAll('.slide img').forEach((img, i) => { if (t.carouselAlt[i]) img.alt = t.carouselAlt[i]; });
+  document.querySelectorAll('.slide img').forEach((img, i) => { img.alt = t.carouselAlt[i % t.carouselAlt.length]; });
   document.getElementById('carousel').setAttribute('aria-label', t.carouselLabel);
   document.getElementById('carPrev').setAttribute('aria-label', t.prevLabel);
   document.getElementById('carNext').setAttribute('aria-label', t.nextLabel);
@@ -490,21 +501,76 @@ function applyLang(l){
 const carTrack = document.getElementById('carouselTrack');
 const carPrev = document.getElementById('carPrev');
 const carNext = document.getElementById('carNext');
+const carSlides = Array.from(carTrack.children);
+const carCount = carSlides.length;
+// Copies on both sides let touch, trackpad and arrow navigation cross either end.
+function carCopies(){
+  const fragment = document.createDocumentFragment();
+  carSlides.forEach(slide => {
+    const copy = slide.cloneNode(true);
+    copy.setAttribute('aria-hidden', 'true');
+    fragment.appendChild(copy);
+  });
+  return fragment;
+}
+carTrack.prepend(carCopies());
+carTrack.append(carCopies());
 function carStep(){
   const slide = carTrack.querySelector('.slide');
   const gap = parseFloat(getComputedStyle(carTrack).columnGap) || 18;
   return slide.getBoundingClientRect().width + gap;
 }
-function carUpdate(){
-  carPrev.disabled = carTrack.scrollLeft <= 2;
-  carNext.disabled = carTrack.scrollLeft + carTrack.clientWidth >= carTrack.scrollWidth - 2;
+function carJump(left){
+  carTrack.style.scrollSnapType = 'none';
+  carTrack.scrollTo({ left, behavior: 'instant' });
+  requestAnimationFrame(() => { carTrack.style.scrollSnapType = ''; });
 }
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-carPrev.addEventListener('click', () => carTrack.scrollBy({ left: -carStep(), behavior: reduceMotion ? 'auto' : 'smooth' }));
-carNext.addEventListener('click', () => carTrack.scrollBy({ left: carStep(), behavior: reduceMotion ? 'auto' : 'smooth' }));
-carTrack.addEventListener('scroll', carUpdate, { passive: true });
-window.addEventListener('resize', carUpdate);
-carUpdate();
+let carWidth = carStep();
+carJump(carCount * carWidth);
+let carTimer;
+let carDragging = false;
+function carNormalize(){
+  if(carDragging) return;
+  const cycle = carStep() * carCount;
+  const left = carTrack.scrollLeft;
+  if(cycle > 0 && (left < cycle - 1 || left >= 2 * cycle - 1)){
+    carJump(cycle + ((left - cycle) % cycle + cycle) % cycle);
+  }
+}
+function carMove(direction){
+  carNormalize();
+  const step = carStep();
+  const target = (Math.round(carTrack.scrollLeft / step) + direction) * step;
+  carTrack.scrollTo({ left: target, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+}
+carPrev.disabled = false;
+carNext.disabled = false;
+carPrev.addEventListener('click', () => carMove(-1));
+carNext.addEventListener('click', () => carMove(1));
+carTrack.addEventListener('keydown', event => {
+  if(event.key === 'ArrowLeft' || event.key === 'ArrowRight'){
+    event.preventDefault();
+    carMove(event.key === 'ArrowLeft' ? -1 : 1);
+  }
+});
+carTrack.addEventListener('pointerdown', () => { carDragging = true; });
+function carRelease(){
+  carDragging = false;
+  clearTimeout(carTimer);
+  carTimer = setTimeout(carNormalize, 160);
+}
+window.addEventListener('pointerup', carRelease);
+window.addEventListener('pointercancel', carRelease);
+carTrack.addEventListener('scroll', () => {
+  clearTimeout(carTimer);
+  carTimer = setTimeout(carNormalize, 160);
+}, { passive: true });
+carTrack.addEventListener('scrollend', carNormalize);
+window.addEventListener('resize', () => {
+  const index = Math.round(carTrack.scrollLeft / carWidth) % carCount;
+  carWidth = carStep();
+  carJump((carCount + index) * carWidth);
+});
 
 document.getElementById('btnCz').addEventListener('click', () => applyLang('cz'));
 document.getElementById('btnEn').addEventListener('click', () => applyLang('en'));
